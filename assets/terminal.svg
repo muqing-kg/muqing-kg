@@ -2,20 +2,15 @@
   <defs>
     <style>
       .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
-      @keyframes blink{0%,48%{opacity:1}49%,100%{opacity:.08}}
-      @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+      @keyframes roll{from{transform:translateY(0)}to{transform:translateY(-442px)}}
       @keyframes grid{from{transform:translateY(0)}to{transform:translateY(40px)}}
       @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,22px)}}
       @keyframes fadein{from{opacity:0}to{opacity:1}}
-      .caret{animation:blink 1.05s steps(1,end) infinite}
-      .spinner{transform-box:fill-box;transform-origin:50% 50%;animation:spin 1.3s linear infinite}
+      .stream{animation:roll 20s linear infinite}
       .grid{animation:grid 9s linear infinite}
       .glow{transform-box:fill-box;transform-origin:50% 50%;animation:drift 20s ease-in-out infinite}
       .head{animation:fadein 1s ease-out .2s both}
     </style>
-    <linearGradient id="barG2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#8B5CF6"/>
-    </linearGradient>
     <linearGradient id="edgeT" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#22D3EE"/><stop offset=".5" stop-color="#8B5CF6"/><stop offset="1" stop-color="#F472B6"/>
     </linearGradient>
@@ -25,16 +20,17 @@
     <radialGradient id="softT" cx=".5" cy=".5" r=".5">
       <stop offset="0" stop-color="#0E7490" stop-opacity=".55"/><stop offset="1" stop-color="#0E7490" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="veilTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080B14" stop-opacity="1"/><stop offset="1" stop-color="#080B14" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="veilBot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080B14" stop-opacity="0"/><stop offset="1" stop-color="#080B14" stop-opacity=".92"/>
+    </linearGradient>
     <pattern id="pg3" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0H0v40" fill="none" stroke="#7DD3FC" stroke-opacity=".05" stroke-width="1"/>
     </pattern>
     <clipPath id="clipT"><rect x="10" y="10" width="580" height="320" rx="14"/></clipPath>
-    <clipPath id="l1"><rect x="26" y="67" width="0" height="24"><animate attributeName="width" values="0;220;220;0" keyTimes="0.02;0.06;0.96;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="l2"><rect x="26" y="93" width="0" height="24"><animate attributeName="width" values="0;240;240;0" keyTimes="0.06;0.10;0.96;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="l3"><rect x="26" y="125" width="0" height="24"><animate attributeName="width" values="0;250;250;0" keyTimes="0.10;0.14;0.96;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="l4"><rect x="26" y="151" width="0" height="24"><animate attributeName="width" values="0;330;330;0" keyTimes="0.14;0.18;0.96;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="l5"><rect x="26" y="183" width="0" height="24"><animate attributeName="width" values="0;280;280;0" keyTimes="0.18;0.22;0.96;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="l6"><rect x="26" y="209" width="0" height="24"><animate attributeName="width" values="0;200;200;0" keyTimes="0.22;0.26;0.96;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="clipScr"><rect x="10" y="50" width="580" height="272"/></clipPath>
   </defs>
 
   <g clip-path="url(#clipT)">
@@ -47,41 +43,69 @@
     <circle cx="34" cy="29" r="5.5" fill="#FF5F57"/><circle cx="54" cy="29" r="5.5" fill="#FEBC2E"/><circle cx="74" cy="29" r="5.5" fill="#28C840"/>
     <text class="mono head" x="300" y="33" text-anchor="middle" font-size="11.5" fill="#64748B" letter-spacing="1.2">muqing-kg &#183; zsh</text>
 
-    <g clip-path="url(#l1)">
-      <text class="mono" x="30" y="84" font-size="14" fill="#22D3EE">$</text>
-      <text class="mono" x="46" y="84" font-size="14" fill="#CBD5E1">whoami</text>
-    </g>
-    <g clip-path="url(#l2)">
-      <text class="mono" x="30" y="110" font-size="14" fill="#8B5CF6">&#8250;</text>
-      <text class="mono" x="46" y="110" font-size="14" fill="#E2E8F0">muqing-kg</text>
-    </g>
-    <g clip-path="url(#l3)">
-      <text class="mono" x="30" y="142" font-size="14" fill="#22D3EE">$</text>
-      <text class="mono" x="46" y="142" font-size="14" fill="#CBD5E1">cat ./mood.txt</text>
-    </g>
-    <g clip-path="url(#l4)">
-      <text class="mono" x="46" y="168" font-size="14" fill="#A5F3FC">night &#183; curiosity &#183; a little romance</text>
-    </g>
-    <g clip-path="url(#l5)">
-      <text class="mono" x="30" y="200" font-size="14" fill="#22D3EE">$</text>
-      <text class="mono" x="46" y="200" font-size="14" fill="#CBD5E1">./run --mode=vibe</text>
-    </g>
-    <g clip-path="url(#l6)">
-      <text class="mono" x="46" y="226" font-size="14" fill="#34D399">&#10003; ready.</text>
+    <g clip-path="url(#clipScr)">
+      <g class="stream">
+        <g class="copy">
+          <text class="mono" x="30" y="76" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="76" font-size="14" fill="#CBD5E1">whoami</text>
+          <text class="mono" x="30" y="102" font-size="14" fill="#8B5CF6">›</text>
+          <text class="mono" x="46" y="102" font-size="14" fill="#E2E8F0">muqing-kg</text>
+          <text class="mono" x="30" y="128" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="128" font-size="14" fill="#CBD5E1">cat ./mood.txt</text>
+          <text class="mono" x="46" y="154" font-size="14" fill="#A5F3FC">night · curiosity · a little romance</text>
+          <text class="mono" x="30" y="180" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="180" font-size="14" fill="#CBD5E1">date</text>
+          <text class="mono" x="46" y="206" font-size="14" fill="#64748B">01:47 · 还没睡</text>
+          <text class="mono" x="30" y="232" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="232" font-size="14" fill="#CBD5E1">ls ./ideas | wc -l</text>
+          <text class="mono" x="46" y="258" font-size="14" fill="#94A3B8">47</text>
+          <text class="mono" x="30" y="284" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="284" font-size="14" fill="#CBD5E1">git status -s</text>
+          <text class="mono" x="46" y="310" font-size="14" fill="#FBBF24">M 想做的事.md</text>
+          <text class="mono" x="46" y="336" font-size="14" fill="#64748B">?? 明天再说/</text>
+          <text class="mono" x="30" y="362" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="362" font-size="14" fill="#CBD5E1">./run --mode=vibe</text>
+          <text class="mono" x="46" y="388" font-size="14" fill="#34D399">✓ ready.</text>
+          <text class="mono" x="30" y="414" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="414" font-size="14" fill="#CBD5E1">sleep 1 &amp;&amp; echo "还不睡？"</text>
+          <text class="mono" x="46" y="440" font-size="14" fill="#94A3B8">还不睡？</text>
+          <text class="mono" x="30" y="466" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="466" font-size="14" fill="#CBD5E1">exit</text>
+          <text class="mono" x="46" y="492" font-size="14" fill="#F472B6">明天见</text>
+        </g>
+        <g class="copy" transform="translate(0,442)">
+          <text class="mono" x="30" y="76" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="76" font-size="14" fill="#CBD5E1">whoami</text>
+          <text class="mono" x="30" y="102" font-size="14" fill="#8B5CF6">›</text>
+          <text class="mono" x="46" y="102" font-size="14" fill="#E2E8F0">muqing-kg</text>
+          <text class="mono" x="30" y="128" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="128" font-size="14" fill="#CBD5E1">cat ./mood.txt</text>
+          <text class="mono" x="46" y="154" font-size="14" fill="#A5F3FC">night · curiosity · a little romance</text>
+          <text class="mono" x="30" y="180" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="180" font-size="14" fill="#CBD5E1">date</text>
+          <text class="mono" x="46" y="206" font-size="14" fill="#64748B">01:47 · 还没睡</text>
+          <text class="mono" x="30" y="232" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="232" font-size="14" fill="#CBD5E1">ls ./ideas | wc -l</text>
+          <text class="mono" x="46" y="258" font-size="14" fill="#94A3B8">47</text>
+          <text class="mono" x="30" y="284" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="284" font-size="14" fill="#CBD5E1">git status -s</text>
+          <text class="mono" x="46" y="310" font-size="14" fill="#FBBF24">M 想做的事.md</text>
+          <text class="mono" x="46" y="336" font-size="14" fill="#64748B">?? 明天再说/</text>
+          <text class="mono" x="30" y="362" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="362" font-size="14" fill="#CBD5E1">./run --mode=vibe</text>
+          <text class="mono" x="46" y="388" font-size="14" fill="#34D399">✓ ready.</text>
+          <text class="mono" x="30" y="414" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="414" font-size="14" fill="#CBD5E1">sleep 1 &amp;&amp; echo "还不睡？"</text>
+          <text class="mono" x="46" y="440" font-size="14" fill="#94A3B8">还不睡？</text>
+          <text class="mono" x="30" y="466" font-size="14" fill="#22D3EE">$</text>
+          <text class="mono" x="46" y="466" font-size="14" fill="#CBD5E1">exit</text>
+          <text class="mono" x="46" y="492" font-size="14" fill="#F472B6">明天见</text>
+        </g>
+      </g>
     </g>
 
-    <text class="mono" x="30" y="266" font-size="12" fill="#64748B">building</text>
-    <rect x="96" y="256" width="200" height="6" rx="3" fill="#1B2233"/>
-    <rect x="96" y="256" width="0" height="6" rx="3" fill="url(#barG2)">
-      <animate attributeName="width" values="0;200;200;0" keyTimes="0.30;0.58;0.94;1" dur="14s" repeatCount="indefinite"/>
-    </rect>
-    <g class="spinner">
-      <circle cx="320" cy="259" r="8" fill="none" stroke="#22D3EE" stroke-width="2" stroke-dasharray="13 38" stroke-linecap="round" opacity=".9"/>
-    </g>
-
-    <text class="mono" x="30" y="300" font-size="14" fill="#22D3EE">$</text>
-    <rect class="caret" x="46" y="288" width="8.5" height="15" fill="#22D3EE"/>
-    <text class="mono" x="566" y="300" font-size="11" fill="#475569" text-anchor="end" letter-spacing="1.4">exit 0</text>
+    <rect x="10" y="50" width="580" height="34" fill="url(#veilTop)"/>
+    <rect x="10" y="286" width="580" height="40" fill="url(#veilBot)"/>
   </g>
   <rect x="10" y="10" width="580" height="320" rx="14" fill="none" stroke="url(#edgeT)" stroke-width="1.4" stroke-opacity=".5" stroke-dasharray="80 18 30 18">
     <animate attributeName="stroke-dashoffset" from="0" to="-146" dur="10s" repeatCount="indefinite"/>
