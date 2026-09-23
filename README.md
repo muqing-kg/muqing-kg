@@ -20,9 +20,7 @@
 
 <img src="assets/log.svg" alt="深夜频道" width="100%">
 
-## 深夜流水线
 
-<img src="assets/flow.svg" alt="深夜流水线" width="100%">
 
 > 夜里写的东西，白天再判断好不好看。
 
