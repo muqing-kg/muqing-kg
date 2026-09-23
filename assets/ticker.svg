@@ -36,8 +36,8 @@
   <g clip-path="url(#clipTick)">
     <rect x="10" y="10" width="1180" height="130" fill="#080B14"/>
     <g class="mq">
-      <text class="mono" x="40" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1180" lengthAdjust="spacing">沐倾 &#183; 深夜频道 &#183; 手绘 SVG &#183; NO TEMPLATES &#183; NO JAVASCRIPT &#183; 把夜晚写成一行一行的光 &#183;</text>
-      <text class="mono" x="1220" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1180" lengthAdjust="spacing">沐倾 &#183; 深夜频道 &#183; 手绘 SVG &#183; NO TEMPLATES &#183; NO JAVASCRIPT &#183; 把夜晚写成一行一行的光 &#183;</text>
+      <text class="mono" x="40" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1180" lengthAdjust="spacing">沐倾 &#183; 深夜频道 &#183; 把夜晚写成一行一行的光 &#183; 天亮之前都算今天 &#183; 不问值不值得 &#183;</text>
+      <text class="mono" x="1220" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1180" lengthAdjust="spacing">沐倾 &#183; 深夜频道 &#183; 把夜晚写成一行一行的光 &#183; 天亮之前都算今天 &#183; 不问值不值得 &#183;</text>
     </g>
     <g class="eq">
       <use href="#tb"/><use href="#tb" x="29"/><use href="#tb" x="58"/><use href="#tb" x="87"/>
