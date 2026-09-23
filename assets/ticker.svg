@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="scrolling ticker">
+  <defs>
+    <style>
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","PingFang SC","Microsoft YaHei",monospace}
+      @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-1040px)}}
+      @keyframes eq{0%,100%{transform:scaleY(.12)}50%{transform:scaleY(1)}}
+      .mq{animation:marquee 26s linear infinite}
+      .eq>*{transform-box:fill-box;transform-origin:50% 100%;animation:eq 1.5s ease-in-out infinite}
+      .eq>:nth-child(5n+1){animation-delay:-.08s;animation-duration:1.3s}
+      .eq>:nth-child(5n+2){animation-delay:-.30s;animation-duration:1.7s}
+      .eq>:nth-child(5n+3){animation-delay:-.52s;animation-duration:1.45s}
+      .eq>:nth-child(5n+4){animation-delay:-.74s;animation-duration:1.9s}
+      .eq>:nth-child(5n+5){animation-delay:-.96s;animation-duration:1.55s}
+    </style>
+    <linearGradient id="tickText" x1="0" y1="0" x2="1" y2="0" spreadMethod="reflect">
+      <stop offset="0" stop-color="#A5F3FC"/><stop offset=".33" stop-color="#C4B5FD"/><stop offset=".66" stop-color="#FBCFE8"/>
+      <stop offset="1" stop-color="#A5F3FC"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="tickEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/><stop offset=".5" stop-color="#8B5CF6"/><stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#080B14" stop-opacity="1"/><stop offset="1" stop-color="#080B14" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fadeR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#080B14" stop-opacity="1"/><stop offset="1" stop-color="#080B14" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="barGt" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity=".3"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".95"/>
+    </linearGradient>
+    <clipPath id="clipTick"><rect x="10" y="10" width="1180" height="130" rx="14"/></clipPath>
+    <rect id="tb" x="60" y="96" width="3" height="24" rx="1.5" fill="url(#barGt)"/>
+  </defs>
+
+  <g clip-path="url(#clipTick)">
+    <rect x="10" y="10" width="1180" height="130" fill="#080B14"/>
+    <g class="mq">
+      <text class="mono" x="40" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1040" lengthAdjust="spacing">手绘 SVG &#183; 深夜频道 &#183; NO TEMPLATES &#183; NO FRAMEWORKS &#183; 把夜晚写成一行一行的光 &#183;</text>
+      <text class="mono" x="1080" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1040" lengthAdjust="spacing">手绘 SVG &#183; 深夜频道 &#183; NO TEMPLATES &#183; NO FRAMEWORKS &#183; 把夜晚写成一行一行的光 &#183;</text>
+    </g>
+    <g class="eq">
+      <use href="#tb"/><use href="#tb" x="29"/><use href="#tb" x="58"/><use href="#tb" x="87"/>
+      <use href="#tb" x="116"/><use href="#tb" x="145"/><use href="#tb" x="174"/><use href="#tb" x="203"/>
+      <use href="#tb" x="232"/><use href="#tb" x="261"/><use href="#tb" x="290"/><use href="#tb" x="319"/>
+      <use href="#tb" x="348"/><use href="#tb" x="377"/><use href="#tb" x="406"/><use href="#tb" x="435"/>
+      <use href="#tb" x="464"/><use href="#tb" x="493"/><use href="#tb" x="522"/><use href="#tb" x="551"/>
+      <use href="#tb" x="580"/><use href="#tb" x="609"/><use href="#tb" x="638"/><use href="#tb" x="667"/>
+      <use href="#tb" x="696"/><use href="#tb" x="725"/><use href="#tb" x="754"/><use href="#tb" x="783"/>
+      <use href="#tb" x="812"/><use href="#tb" x="841"/><use href="#tb" x="870"/><use href="#tb" x="899"/>
+      <use href="#tb" x="928"/><use href="#tb" x="957"/><use href="#tb" x="986"/><use href="#tb" x="1015"/>
+      <use href="#tb" x="1044"/><use href="#tb" x="1073"/><use href="#tb" x="1102"/>
+    </g>
+    <rect x="10" y="10" width="90" height="130" fill="url(#fadeL)"/>
+    <rect x="1100" y="10" width="90" height="130" fill="url(#fadeR)"/>
+    <line x1="30" y1="34" x2="1170" y2="34" stroke="#1B2233" stroke-width="1"/>
+  </g>
+  <rect x="10" y="10" width="1180" height="130" rx="14" fill="none" stroke="url(#tickEdge)" stroke-width="1.4" stroke-opacity=".5" stroke-dasharray="70 16 26 16">
+    <animate attributeName="stroke-dashoffset" from="0" to="-128" dur="9s" repeatCount="indefinite"/>
+  </rect>
+</svg>
