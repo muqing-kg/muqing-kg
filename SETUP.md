@@ -34,14 +34,15 @@ XML 不合法时，GitHub 上对应的图会整块空白。README 里引用的�
 
 | 需求 | 改动位置 |
 | --- | --- |
-| 名字变长顶到边框 | `assets/hero.svg` 中三处 `font-size="136"` 调小到 110 或 96，同时三处 `letter-spacing="18"` 调到 8 |
+| 名字变长顶到边框 | `assets/hero.svg` 中三处 `font-size="150"` 调小到 120 或 104，同时三处 `letter-spacing="20"` 调到 10 |
+| 换大标题字体 | `assets/hero.svg` 中 `.kai` 那条 `font-family`；楷体缺失的机器会退到 `Songti SC` / 宋体 / 衬线，观感仍然区别于默认黑体 |
 | 副标题太长 | `assets/hero.svg` 中 `y="206"` 那行，`font-size="19"` 调小 |
 | 换配色 | 每个 SVG 顶部的 `<style>` 与 `<linearGradient>` / `<radialGradient>` 里的十六进制色值 |
 | 动画速度 | SVG 内的 `<animate dur="...">` 与 CSS 里的 `animation` 时长 |
 | 不要访问计数徽章 | 删除 `README.md` 中 `komarev.com` 那一行 |
 | 不要终端 / 轨道面板 | 删除 `README.md` 中对应的 `<img>` 行，并把保留那行的 `width="49%"` 改成 `100%` |
 | 不要滚动条幅 / 波浪线 / 流程图 / 开机日志 | 删除 `README.md` 中对应的 `<img>` 行，并删掉 `assets/` 下对应文件 |
-| 条幅文案 | `assets/ticker.svg` 中两处 `<text>` 内容需同步改，两处必须完全一致才能无缝循环 |
+| 条幅文案 | `assets/ticker.svg` 中两处 `<text>` 内容需同步改，两处必须完全一致才能无缝循环；改文案或改字数时，同步调整两处的 `textLength`、第二个 `<text>` 的 `x`（等于第一个 `x` 加 `textLength`）与 `@keyframes marquee` 的位移量，三者必须相等 |
 | 开机日志的文字 | `assets/log.svg` 中一行一个 `<g class="row">`，改里面的 `<text>` 即可；增删行时同步改「面板清单」与「这块主页」里的行数描述 |
 | 日志逐行浮现的节奏 | `assets/log.svg` 中每行 `<g>` 的 `animation-delay`，现在是每行相差 `0.42s` |
 | 流程图节点文字 | `assets/flow.svg` 里五个 `<rect>` 加一个菱形，文字在各自下方的 `<text>` 中，节点宽度与文字长度不匹配时改 `<rect>` 的 `width` 与 `x` |

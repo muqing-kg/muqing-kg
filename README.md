@@ -18,19 +18,13 @@
 
 ## 深夜频道
 
-开机十一行，全部现画：
-
 <img src="assets/log.svg" alt="boot log" width="100%">
 
 ## 深夜流水线
 
-从「写一点」绕到「明天再说」，虚线一直在流：
-
 <img src="assets/flow.svg" alt="night pipeline" width="100%">
 
 ## 面板清单
-
-七张图，都是手写的 SVG。没有模板、没有构建、没有 JavaScript，动画就写在文件里。
 
 | 面板 | 尺寸 | 里面在动什么 |
 | --- | --- | --- |
@@ -44,28 +38,23 @@
 
 ## 手绘笔记
 
-三件事必须记住，写下来省得下次再踩一遍。
-
-同一段文字放两份，位移量正好等于一份的宽度，就能无缝循环：
-
 ```html
-<text x="40" textLength="1040" lengthAdjust="spacing">同一段文字</text>
-<text x="1080" textLength="1040" lengthAdjust="spacing">同一段文字</text>
-<style>@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-1040px)}}</style>
+<!-- 无缝滚动：两处文案必须一模一样，位移量正好等于一份的宽度 -->
+<text x="40" textLength="1180" lengthAdjust="spacing">同一段文字</text>
+<text x="1220" textLength="1180" lengthAdjust="spacing">同一段文字</text>
+<style>@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-1180px)}}</style>
 ```
 
-渐变流光只能交给 SMIL，因为 CSS 动不了 `gradientTransform`：
-
 ```html
+<!-- 渐变流光：CSS 动不了 gradientTransform，只能交给 SMIL -->
 <linearGradient id="shimmer" x1="0" x2="1" spreadMethod="reflect">
   <animateTransform attributeName="gradientTransform" type="translate"
                     from="-1 0" to="1 0" dur="7s" repeatCount="indefinite"/>
 </linearGradient>
 ```
 
-GitHub 把 SVG 当图片渲染，脚本、外链、外部字体一律不加载，所以全部写死在文件里：
-
 ```html
+<!-- GitHub 把 SVG 当图片渲染：脚本、外链、外部字体一律不加载 -->
 <img src="assets/hero.svg" width="100%">
 ```
 
@@ -75,7 +64,7 @@ GitHub 把 SVG 当图片渲染，脚本、外链、外部字体一律不加载�
 | --- | --- |
 | 图形 | 七张手写 SVG，直接打开就能改，改完刷新即生效 |
 | 第三方服务 | 只有访问计数徽章一个，没有图表服务，没有追踪脚本 |
-| 客户端渲染 | 不用 mermaid，也不用 ansi 代码块，没有「加载失败只剩一坨源码」的失败面 |
+| 客户端渲染 | 不依赖 mermaid、代码高亮这类二次渲染，没有「加载失败只剩一坨源码」的失败面 |
 | 主题 | 面板自带深色底，浅色与深色主题下观感一致，不做双版本 |
 | 交互 | SVG 作为图片渲染，不响应 hover 或点击，所有效果都是自动播放 |
 | 字体 | 只用系统字体栈，不加载外部字体 |

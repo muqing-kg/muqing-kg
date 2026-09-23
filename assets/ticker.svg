@@ -2,7 +2,7 @@
   <defs>
     <style>
       .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","PingFang SC","Microsoft YaHei",monospace}
-      @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-1040px)}}
+      @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-1180px)}}
       @keyframes eq{0%,100%{transform:scaleY(.12)}50%{transform:scaleY(1)}}
       .mq{animation:marquee 26s linear infinite}
       .eq>*{transform-box:fill-box;transform-origin:50% 100%;animation:eq 1.5s ease-in-out infinite}
@@ -36,8 +36,8 @@
   <g clip-path="url(#clipTick)">
     <rect x="10" y="10" width="1180" height="130" fill="#080B14"/>
     <g class="mq">
-      <text class="mono" x="40" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1040" lengthAdjust="spacing">手绘 SVG &#183; 深夜频道 &#183; NO TEMPLATES &#183; NO FRAMEWORKS &#183; 把夜晚写成一行一行的光 &#183;</text>
-      <text class="mono" x="1080" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1040" lengthAdjust="spacing">手绘 SVG &#183; 深夜频道 &#183; NO TEMPLATES &#183; NO FRAMEWORKS &#183; 把夜晚写成一行一行的光 &#183;</text>
+      <text class="mono" x="40" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1180" lengthAdjust="spacing">沐倾 &#183; 深夜频道 &#183; 手绘 SVG &#183; NO TEMPLATES &#183; NO JAVASCRIPT &#183; 把夜晚写成一行一行的光 &#183;</text>
+      <text class="mono" x="1220" y="72" font-size="26" letter-spacing="3" fill="url(#tickText)" textLength="1180" lengthAdjust="spacing">沐倾 &#183; 深夜频道 &#183; 手绘 SVG &#183; NO TEMPLATES &#183; NO JAVASCRIPT &#183; 把夜晚写成一行一行的光 &#183;</text>
     </g>
     <g class="eq">
       <use href="#tb"/><use href="#tb" x="29"/><use href="#tb" x="58"/><use href="#tb" x="87"/>
