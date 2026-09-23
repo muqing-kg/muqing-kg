@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="沐倾">
+  <defs>
+    <style>
+      .ui{font-family:ui-sans-serif,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",Roboto,Helvetica,Arial,sans-serif}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","PingFang SC","Microsoft YaHei",monospace}
+      @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes driftA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(70px,-34px) scale(1.14)}}
+      @keyframes driftB{0%,100%{transform:translate(0,0) scale(1.08)}50%{transform:translate(-80px,26px) scale(.94)}}
+      @keyframes driftC{0%,100%{transform:translate(0,0) scale(.96)}50%{transform:translate(40px,30px) scale(1.1)}}
+      @keyframes grid{from{transform:translateY(0)}to{transform:translateY(40px)}}
+      @keyframes float{0%{opacity:0;transform:translateY(30px)}12%{opacity:.85}80%{opacity:.45}100%{opacity:0;transform:translateY(-320px)}}
+      @keyframes scan{from{transform:translateY(0)}to{transform:translateY(300px)}}
+      @keyframes blink{0%,45%{opacity:1}50%,95%{opacity:.06}100%{opacity:1}}
+      @keyframes glitchA{0%,84%{opacity:0}85%,89%{opacity:.85}90%,100%{opacity:0}}
+      @keyframes settle{from{opacity:0;letter-spacing:15px;transform:translateY(9px)}to{opacity:1;letter-spacing:3px;transform:translateY(0)}}
+      @keyframes eq{0%,100%{transform:scaleY(.14)}50%{transform:scaleY(1)}}
+      .blob{transform-box:fill-box;transform-origin:50% 50%}
+      .b1{animation:driftA 18s ease-in-out infinite}
+      .b2{animation:driftB 23s ease-in-out infinite}
+      .b3{animation:driftC 27s ease-in-out infinite}
+      .grid{animation:grid 9s linear infinite}
+      .p{transform-box:fill-box;animation:float 11s linear infinite}
+      .scan{animation:scan 7s linear infinite}
+      .title{transform-box:fill-box;transform-origin:50% 100%;animation:rise 1.3s cubic-bezier(.22,.7,.2,1) both}
+      .sub{animation:settle 1.6s cubic-bezier(.22,.7,.2,1) .55s both}
+      .gA{animation:glitchA 5.5s steps(1,end) infinite}
+      .gB{animation:glitchA 5.5s steps(1,end) infinite .14s}
+      .eq>*{transform-box:fill-box;transform-origin:50% 100%;animation:eq 1.6s ease-in-out infinite}
+      .eq>:nth-child(5n+1){animation-delay:-.10s;animation-duration:1.35s}
+      .eq>:nth-child(5n+2){animation-delay:-.35s;animation-duration:1.75s}
+      .eq>:nth-child(5n+3){animation-delay:-.60s;animation-duration:1.50s}
+      .eq>:nth-child(5n+4){animation-delay:-.85s;animation-duration:1.95s}
+      .eq>:nth-child(5n+5){animation-delay:-1.10s;animation-duration:1.60s}
+    </style>
+    <linearGradient id="edgeG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/><stop offset=".45" stop-color="#8B5CF6"/><stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0" y1="0" x2="1" y2="0" spreadMethod="reflect">
+      <stop offset="0" stop-color="#E0E7FF"/><stop offset=".28" stop-color="#C4B5FD"/><stop offset=".5" stop-color="#A5F3FC"/>
+      <stop offset=".72" stop-color="#FBCFE8"/><stop offset="1" stop-color="#E0E7FF"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="7s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="barG" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity=".25"/><stop offset="1" stop-color="#8B5CF6" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="scanG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0"/><stop offset=".5" stop-color="#A5F3FC" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vig" cx=".5" cy=".32" r=".8">
+      <stop offset=".18" stop-color="#000000" stop-opacity=".1"/><stop offset=".62" stop-color="#000000" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".8"/>
+    </radialGradient>
+    <pattern id="pgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#7DD3FC" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="70"/></filter>
+    <filter id="glow" x="-40%" y="-60%" width="180%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#8B5CF6" flood-opacity=".9"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="16" flood-color="#22D3EE" flood-opacity=".4"/>
+    </filter>
+    <clipPath id="clipFrame"><rect x="10" y="10" width="1180" height="320" rx="16"/></clipPath>
+    <circle id="dot" r="1.7" fill="#A5F3FC"/>
+    <rect id="bar" x="190" y="236" width="5" height="52" rx="2.5" fill="url(#barG)"/>
+  </defs>
+
+  <g clip-path="url(#clipFrame)">
+    <rect x="10" y="10" width="1180" height="320" fill="#05070E"/>
+    <g style="mix-blend-mode:screen">
+      <ellipse class="blob b1" cx="250" cy="-64" rx="270" ry="140" fill="#6E56CF" opacity=".3" filter="url(#soft)"/>
+      <ellipse class="blob b2" cx="955" cy="-70" rx="290" ry="140" fill="#0E7490" opacity=".34" filter="url(#soft)"/>
+      <ellipse class="blob b3" cx="620" cy="215" rx="360" ry="120" fill="#BE185D" opacity=".2" filter="url(#soft)"/>
+    </g>
+    <g class="grid"><rect x="10" y="-40" width="1180" height="440" fill="url(#pgrid)"/></g>
+    <g>
+      <use class="p" href="#dot" x="86" y="330" style="animation-delay:-1.2s;animation-duration:12s"/>
+      <use class="p" href="#dot" x="182" y="330" style="animation-delay:-5.4s;animation-duration:9.5s"/>
+      <use class="p" href="#dot" x="268" y="330" style="animation-delay:-2.9s;animation-duration:13s"/>
+      <use class="p" href="#dot" x="352" y="330" style="animation-delay:-8.1s;animation-duration:10.5s"/>
+      <use class="p" href="#dot" x="438" y="330" style="animation-delay:-3.7s;animation-duration:12.5s"/>
+      <use class="p" href="#dot" x="520" y="330" style="animation-delay:-6.6s;animation-duration:11s"/>
+      <use class="p" href="#dot" x="604" y="330" style="animation-delay:-.6s;animation-duration:13.5s"/>
+      <use class="p" href="#dot" x="690" y="330" style="animation-delay:-7.4s;animation-duration:10s"/>
+      <use class="p" href="#dot" x="774" y="330" style="animation-delay:-4.3s;animation-duration:12.2s"/>
+      <use class="p" href="#dot" x="858" y="330" style="animation-delay:-9.2s;animation-duration:11.6s"/>
+      <use class="p" href="#dot" x="944" y="330" style="animation-delay:-2.1s;animation-duration:13.2s"/>
+      <use class="p" href="#dot" x="1024" y="330" style="animation-delay:-6.1s;animation-duration:9.8s"/>
+      <use class="p" href="#dot" x="1104" y="330" style="animation-delay:-3.3s;animation-duration:12.8s"/>
+      <use class="p" href="#dot" x="1170" y="330" style="animation-delay:-8.7s;animation-duration:10.8s"/>
+    </g>
+    <rect class="scan" x="10" y="10" width="1180" height="2.4" fill="url(#scanG)" opacity=".85"/>
+    <rect x="10" y="10" width="1180" height="320" fill="url(#vig)"/>
+    <path d="M34 40V34h6" fill="none" stroke="#22D3EE" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M1166 40V34h-6" fill="none" stroke="#22D3EE" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M34 308v6h6" fill="none" stroke="#22D3EE" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M1166 308v6h-6" fill="none" stroke="#22D3EE" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+    <g class="title">
+      <text class="gA" x="613" y="160" text-anchor="middle" font-size="136" font-weight="800" letter-spacing="18" fill="#F472B6" opacity="0">沐倾</text>
+      <text class="gB" x="605" y="160" text-anchor="middle" font-size="136" font-weight="800" letter-spacing="18" fill="#22D3EE" opacity="0">沐倾</text>
+      <text class="ui" x="609" y="160" text-anchor="middle" font-size="136" font-weight="800" letter-spacing="18" fill="url(#shimmer)" filter="url(#glow)">沐倾</text>
+    </g>
+    <text class="mono sub" x="600" y="206" text-anchor="middle" font-size="19" fill="#7DD3FC" opacity="0">把夜晚写成一行一行的光</text>
+    <g class="eq">
+      <rect x="190" y="287.5" width="811" height="1" fill="#22D3EE" opacity=".1"/>
+      <use href="#bar"/><use href="#bar" x="26"/><use href="#bar" x="52"/><use href="#bar" x="78"/>
+      <use href="#bar" x="104"/><use href="#bar" x="130"/><use href="#bar" x="156"/><use href="#bar" x="182"/>
+      <use href="#bar" x="208"/><use href="#bar" x="234"/><use href="#bar" x="260"/><use href="#bar" x="286"/>
+      <use href="#bar" x="312"/><use href="#bar" x="338"/><use href="#bar" x="364"/><use href="#bar" x="390"/>
+      <use href="#bar" x="416"/><use href="#bar" x="442"/><use href="#bar" x="468"/><use href="#bar" x="494"/>
+      <use href="#bar" x="520"/><use href="#bar" x="546"/><use href="#bar" x="572"/><use href="#bar" x="598"/>
+      <use href="#bar" x="624"/><use href="#bar" x="650"/><use href="#bar" x="676"/><use href="#bar" x="702"/>
+      <use href="#bar" x="728"/><use href="#bar" x="754"/><use href="#bar" x="780"/><use href="#bar" x="806"/>
+    </g>
+    <text class="mono" x="34" y="318" font-size="11.5" fill="#64748B" letter-spacing="1.6">&#9671; muqing-kg</text>
+    <text class="mono" x="1166" y="318" font-size="11.5" fill="#64748B" letter-spacing="1.6" text-anchor="end">200 OK &#9671;</text>
+  </g>
+  <rect x="10" y="10" width="1180" height="320" rx="16" fill="none" stroke="url(#edgeG)" stroke-width="1.6" stroke-dasharray="120 24 40 24" stroke-opacity=".6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-208" dur="12s" repeatCount="indefinite"/>
+  </rect>
+</svg>
