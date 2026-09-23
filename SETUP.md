@@ -2,7 +2,7 @@
 
 当前已填入：名字 `沐倾`，用户名 `muqing-kg`，副标题 `把夜晚写成一行一行的光`。
 
-主页结构：hero 大标题 → 终端 / 轨道双栏 → 滚动条幅 → 三枚徽章与访问计数 → 深夜频道（ANSI 彩色日志）→ 深夜流水线（mermaid）→ 这块主页（表格）→ 波浪分隔线。
+主页结构：hero 大标题 → 终端 / 轨道双栏 → 滚动条幅 → 三枚徽章与访问计数 → 深夜频道（ANSI 彩色日志）→ 深夜流水线（手绘 SVG 流程图）→ 这块主页（表格）→ 波浪分隔线。
 
 ## 一、最快上线
 
@@ -40,10 +40,10 @@ XML 不合法时，GitHub 上对应的图会整块空白。
 | 动画速度 | SVG 内的 `<animate dur="...">` 与 CSS 里的 `animation` 时长 |
 | 不要访问计数徽章 | 删除 `README.md` 中 `komarev.com` 那一行 |
 | 不要终端 / 轨道面板 | 删除 `README.md` 中对应的 `<img>` 行，并把保留那行的 `width="49%"` 改成 `100%` |
-| 不要滚动条幅或波浪线 | 删除 `README.md` 中对应的 `<img>` 行，并删掉 `assets/ticker.svg` 或 `assets/wave.svg` |
+| 不要滚动条幅 / 波浪线 / 流程图 | 删除 `README.md` 中对应的 `<img>` 行，并删掉 `assets/ticker.svg`、`assets/wave.svg` 或 `assets/flow.svg` |
 | 条幅文案 | `assets/ticker.svg` 中两处 `<text>` 内容需同步改，两处必须完全一致才能无缝循环 |
-| 不要深夜流水线 | 删除 `README.md` 中 ```mermaid 那一整段 |
 | 不要深夜频道 | 删除 `README.md` 中 ```ansi 那一整段 |
+| 流程图节点文字 | `assets/flow.svg` 里五个 `<rect>` 加一个菱形，文字在各自下方的 `<text>` 中，节点宽度与文字长度不匹配时改 `<rect>` 的 `width` 与 `x` |
 
 ## 五、设计约束与说明
 
@@ -52,4 +52,5 @@ XML 不合法时，GitHub 上对应的图会整块空白。
 - 三张图自带深色底，浅色主题与深色主题下观感一致，无需做深浅双版本。
 - SVG 作为图片渲染时无法响应 hover 或点击，所有效果都是自动播放的动画。
 - `README.md` 的深夜频道代码块里含真实的 ESC 控制字符（`ansi` 语法高亮用）。用会吞控制字符的编辑器改写该段落时，颜色会失效；此时把该段换成普通 `text` 代码块即可。
-- 尺寸：`hero.svg` 1200x340、`terminal.svg` 与 `orbit.svg` 各 600x340、`ticker.svg` 1200x150、`wave.svg` 1200x130；README 中前一组按 100% / 49% 排版，后两张按 100% 排版。
+- 尺寸：`hero.svg` 1200x340、`terminal.svg` 与 `orbit.svg` 各 600x340、`ticker.svg` 1200x150、`wave.svg` 1200x130、`flow.svg` 1200x300；README 中前一组按 100% / 49% 排版，其余按 100% 排版。
+- 已放弃 mermaid：GitHub 的 mermaid 是客户端二次渲染，加载失败时访客只会看到一坨源代码。流程图改成手绘 SVG 后不再有这个失败面。
