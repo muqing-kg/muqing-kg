@@ -15,7 +15,7 @@
 在本目录执行（Python 3），把等号左边的旧值换成新值：
 
 ```powershell
-python -c "import pathlib;[p.write_text(p.read_text(encoding='utf-8').replace('沐倾','新名字').replace('muqing-kg','新用户名').replace('把夜晚写成一行一行的光','新副标题'),encoding='utf-8') for p in list(pathlib.Path('.').rglob('*.svg'))+[pathlib.Path('README.md')]]"
+python -c "import pathlib;[p.write_text(p.read_text(encoding='utf-8').replace('沐倾','新名字').replace('muqing-kg','新用户名').replace('把夜晚写成一行一行的光','新副标题'),encoding='utf-8',newline='\n') for p in list(pathlib.Path('.').rglob('*.svg'))+[pathlib.Path('README.md')]]"
 ```
 
 不要用 `Get-Content` / `Set-Content` 直接改写：Windows PowerShell 5.1 的默认编码会把中文写成乱码。
