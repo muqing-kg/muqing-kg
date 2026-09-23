@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="沐倾">
   <defs>
     <style>
-      .kai{font-family:"Kaiti SC","STKaiti","KaiTi","楷体","TW-Kai","Songti SC",STSong,"SimSun","宋体","Noto Serif SC",serif}
+      .song{font-family:"Noto Serif SC","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong","SimSun","宋体",serif}
       .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","PingFang SC","Microsoft YaHei",monospace}
       @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
       @keyframes driftA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(70px,-34px) scale(1.14)}}
@@ -95,9 +95,9 @@
     <path d="M34 308v6h6" fill="none" stroke="#22D3EE" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
     <path d="M1166 308v6h-6" fill="none" stroke="#22D3EE" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
     <g class="title">
-      <text class="kai gA" x="613" y="160" text-anchor="middle" font-size="150" font-weight="400" letter-spacing="20" fill="#F472B6" opacity="0">沐倾</text>
-      <text class="kai gB" x="605" y="160" text-anchor="middle" font-size="150" font-weight="400" letter-spacing="20" fill="#22D3EE" opacity="0">沐倾</text>
-      <text class="kai" x="609" y="160" text-anchor="middle" font-size="150" font-weight="400" letter-spacing="20" fill="url(#shimmer)" filter="url(#glow)">沐倾</text>
+      <text class="song gA" x="613" y="160" text-anchor="middle" font-size="152" font-weight="500" letter-spacing="14" fill="#F472B6" opacity="0">沐倾</text>
+      <text class="song gB" x="605" y="160" text-anchor="middle" font-size="152" font-weight="500" letter-spacing="14" fill="#22D3EE" opacity="0">沐倾</text>
+      <text class="song" x="609" y="160" text-anchor="middle" font-size="152" font-weight="500" letter-spacing="14" fill="url(#shimmer)" filter="url(#glow)">沐倾</text>
     </g>
     <text class="mono sub" x="600" y="206" text-anchor="middle" font-size="19" fill="#7DD3FC" opacity="0">把夜晚写成一行一行的光</text>
     <g class="eq">
